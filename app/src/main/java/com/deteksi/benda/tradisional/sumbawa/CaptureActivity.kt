@@ -23,6 +23,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
@@ -87,6 +88,7 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
 
     var labels = ""
     var desk = ""
+    var img = 0
 
     private val requestPermissionLauncher =
         registerForActivityResult(
@@ -206,26 +208,62 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
             if (category.score.times(100).toInt() > 60 && labels.isNotEmpty()) {
                 isDeteksi = true
                 when (labels) {
-                    listLabels[0] -> desk = listDesk[0]
-                    listLabels[1] -> desk = listDesk[1]
-                    listLabels[2] -> desk = listDesk[2]
-                    listLabels[3] -> desk = listDesk[3]
-                    listLabels[4] -> desk = listDesk[4]
-                    listLabels[5] -> desk = listDesk[5]
-                    listLabels[6] -> desk = listDesk[6]
-                    listLabels[7] -> desk = listDesk[7]
-                    listLabels[8] -> desk = listDesk[8]
-                    listLabels[9] -> desk = listDesk[9]
-                    listLabels[10] -> desk = listDesk[10]
+                    listLabels[0] -> {
+                        img = R.drawable.img_badong
+                        desk = listDesk[0]
+                    }
+                    listLabels[1] -> {
+                        img = R.drawable.img_batu_parujak
+                        desk = listDesk[1]
+                    }
+                    listLabels[2] -> {
+                        img = R.drawable.img_bokar
+                        desk = listDesk[2]
+                    }
+                    listLabels[3] -> {
+                        img = R.drawable.img_cilo_bulaeng
+                        desk = listDesk[3]
+                    }
+                    listLabels[4] -> {
+                        img = R.drawable.img_kalaru
+                        desk = listDesk[4]
+                    }
+                    listLabels[5] -> {
+                        img = R.drawable.img_kendi
+                        desk = listDesk[5]
+                    }
+                    listLabels[6] -> {
+                        img = R.drawable.img_kris_kamutar_sai
+                        desk = listDesk[6]
+                    }
+                    listLabels[7] -> {
+                        img = R.drawable.img_pabekas_salaka
+                        desk = listDesk[7]
+                    }
+                    listLabels[8] -> {
+                        img = R.drawable.img_pabua_gelang
+                        desk = listDesk[8]
+                    }
+                    listLabels[9] -> {
+                        img = R.drawable.img_pajula
+                        desk = listDesk[9]
+                    }
+                    listLabels[10] -> {
+                        img = R.drawable.img_peti
+                        desk = listDesk[10]
+                    }
+                    listLabels[11] -> {
+                        img = R.drawable.img_salepa
+                        desk = listDesk[11]
+                    }
                 }
             } else {
                 isDeteksi = false
 //                Toast.makeText(this, "Gambar tidak terdeteksi", Toast.LENGTH_LONG)
             }
 
-
             // Create a data object to display the detection result
-                DetectionResult(it.boundingBox, text)
+            DetectionResult(it.boundingBox, text)
         }
         // Draw the detection result on the bitmap and show it.
         val imgWithResult = drawDetectionResult(bitmap, resultToDisplay)
@@ -241,7 +279,7 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
                 inputImageView.visibility = View.GONE
                 tvPlaceHolder.visibility = View.VISIBLE
                 lihatSejarah.isEnabled = false
-                tvPlaceHolder.text =  "Gambar tidak terdeteksi"
+                tvPlaceHolder.text = "Gambar tidak terdeteksi"
             }
         }
     }
@@ -451,9 +489,11 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
 
         val layout = LayoutInflater.from(context)
             .inflate(R.layout.custom_dialog, null, false)
+        val imgView = layout.findViewById<AppCompatImageView>(R.id.img_view)
         val tvLabels = layout.findViewById<AppCompatTextView>(R.id.tv_labels)
         val tvDesk = layout.findViewById<AppCompatTextView>(R.id.tv_desk)
 
+        imgView.setImageResource(img)
         tvLabels.text = labels
         tvDesk.text = desk
 

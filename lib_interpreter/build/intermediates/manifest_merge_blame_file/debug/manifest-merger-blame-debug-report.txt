@@ -1,11 +1,11 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="org.tensorflow.lite.examples.detection.tflite" >
+3    package="com.deteksi.benda.tradisional.sumbawa.tflite" >
 4
 5    <uses-sdk
 6        android:minSdkVersion="21"
-6-->D:\luffy-dev\Project\Android\MySeum-v1-beta\lib_interpreter\src\main\AndroidManifest.xml
+6-->D:\luffy-dev\Project\Android\MySeum\lib_interpreter\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="30" />
-7-->D:\luffy-dev\Project\Android\MySeum-v1-beta\lib_interpreter\src\main\AndroidManifest.xml
+7-->D:\luffy-dev\Project\Android\MySeum\lib_interpreter\src\main\AndroidManifest.xml
 8
 9</manifest>

@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "org.tensorflow.lite.examples.detection.tflite",
+  "applicationId": "com.deteksi.benda.tradisional.sumbawa.tflite",
   "variantName": "debug",
   "elements": [
     {

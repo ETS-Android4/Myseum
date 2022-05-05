@@ -3,4 +3,8 @@
     <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
 
     <string name="examples_desk">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+    <string name="tentang">
+        Aplikasi My Seum adalah aplikasi pengenalan atau sistem identifikasi  benda- benda yang ada di UPT Museum Daerah Sumbawa terkhusus artefak.
+        Aplikasi My Seum diibaratkan  sebagai pemandu  yang dapat meberikan  informasi bagi para pengunjung museum dengan menyampaikan secara jelas informasi-informasi yang berkaitan dengan artefak yang ada. Hal ini sejalan dengan koleksi–koleksi  artefak yang ada di museum yang dapat menceritakan sejarah atau kisah tentang kelompok atau individu manusia yang terjadi pada kehidupan masa lalu.
+    </string>
 </resources>

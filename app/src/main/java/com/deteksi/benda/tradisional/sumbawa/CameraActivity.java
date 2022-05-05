@@ -259,10 +259,7 @@ public abstract class CameraActivity extends AppCompatActivity
       final int uvPixelStride = planes[1].getPixelStride();
 
       imageConverter =
-          new Runnable() {
-            @Override
-            public void run() {
-              ImageUtils.convertYUV420ToARGB8888(
+              () -> ImageUtils.convertYUV420ToARGB8888(
                   yuvBytes[0],
                   yuvBytes[1],
                   yuvBytes[2],
@@ -272,8 +269,6 @@ public abstract class CameraActivity extends AppCompatActivity
                   uvRowStride,
                   uvPixelStride,
                   rgbBytes);
-            }
-          };
 
       postInferenceCallback =
           new Runnable() {
