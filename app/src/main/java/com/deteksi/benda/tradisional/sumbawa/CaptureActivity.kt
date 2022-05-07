@@ -7,7 +7,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.*
-import android.media.ExifInterface
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -27,6 +26,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import androidx.exifinterface.media.ExifInterface
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -56,10 +56,9 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var currentPhotoPath: String
     private lateinit var tvResult: AppCompatTextView
 
-    val listLabels = listOf(
+    private val listLabels = listOf(
         "badong",
         "batu parujak",
-        "bokar",
         "cilo bulaeng",
         "kalaru",
         "kendi",
@@ -71,10 +70,9 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
         "salepa"
     )
 
-    val listDesk = listOf(
+    private val listDesk = listOf(
         "Badong merupakan salah satu Regalia Kesultanan Sumbawa yang dijadikan sebagai simbol Kepatuhan  Dan Pengayoman. Badong terbuat dari Kayu Pilihan berbentuk Lingkaran dg Diameter 60 Cm. Cembung bagian luar dan Cekung bagian dalam. Diberi Pegangan kiri kanan pada Bagian Dalam. Ketebalan Kayu Badong sekitar 3 Cm dengan Pucuk berbentuk Bunga Bersusun Berkelopak 8 terbuat dari Emas ( Bulaeng ) dengan pucuk bagian atas diberi permata. Pada Tokal Adat ( Upacara Istana ) baik Tokal Adat Ode maupun Tokal Adat Rea...maka Badong dijunjung di atas kepala seorang Pria petugas khusus. Dari Awal Acara hingga Akhir Acara.",
         "Batu parujak merupakan seperangkat alat menumbuk bahan masakan dan obat-obatan yang digunakan oleh masyarakat Sumbawa tempo dulu. Batu parujak terbuat dari batu alam yang di bentuk serupa alu dan lesung . alat menumbuk ini masih tersimpan rapi dimuseum Sumbawa.",
-        "Bokar pangisi ai merupakan sebuah alat yang diperuntukan untuk menyimpan air apabila masyarakat Sumbawa bepergian ke ladang. Bokar pangisi ai terbuat dari buah pohon  bokar yang banyak terdapat di daerah persawahan sekitaran pedesaan di Sumbawa",
         "Cilo bulaeng atau cilo kamutar adalah mahkota sultan Sumbawa yang terbuat dari emas, digunakan saat upacara tokal adat rea, dan penobatan mudzakara rea sebagai kelengkapan pangkenang kanadi “pasangengang” atau pakaian kebesaran.  Pada bagian pinggir terukir lafaz Allah dan Muhammad yang menjadi penanda bahwa mahkota ini bercorak islami.",
         "Kalaru tata yakni gelang yang menjadi kelengkapan pakaian pengantin wanita khas Sumbawa. Kalaru tata terbuat dari emas muda dan memiliki motif yang sangat khas dari daerah Sumbawa yakni kemang satange, lonto engal.",
         "Fungsi utama kendi adalah sebagai wadah minum di mana air tetap dingin sepanjang hari karena porositas tanah liat. Airnya dituangkan dari kendi langsung ke mulut Konon kendi yang berasal dari India meluas ke Asia Tengggara dan Cina dibawa pedagang dan pemuka agama. Di abad ke-14, kundika yang menjadi wadah ritual Hindu dan Budha di Indonesia mulai ditinggalkan. Namun istilah kendi sudah diserap dalam bahasa Melayu yakni kendi atau kundi. Sementara orang Jawa menyebut gendi.",
@@ -185,7 +183,7 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
             .build()
         val detector = ObjectDetector.createFromFileAndOptions(
             this,
-            "model-v1.tflite",
+            "model_new.tflite",
             options
         )
 
@@ -205,7 +203,7 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
 
             Log.println(Log.ASSERT, "labels", labels)
 
-            if (category.score.times(100).toInt() > 60 && labels.isNotEmpty()) {
+            if (category.score.times(100).toInt() > 70 && labels.isNotEmpty()) {
                 isDeteksi = true
                 when (labels) {
                     listLabels[0] -> {
@@ -216,45 +214,45 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
                         img = R.drawable.img_batu_parujak
                         desk = listDesk[1]
                     }
+//                    listLabels[2] -> {
+//                        img = R.drawable.img_bokar
+//                        desk = listDesk[2]
+//                    }
                     listLabels[2] -> {
-                        img = R.drawable.img_bokar
+                        img = R.drawable.img_cilo_bulaeng
                         desk = listDesk[2]
                     }
                     listLabels[3] -> {
-                        img = R.drawable.img_cilo_bulaeng
+                        img = R.drawable.img_kalaru
                         desk = listDesk[3]
                     }
                     listLabels[4] -> {
-                        img = R.drawable.img_kalaru
+                        img = R.drawable.img_kendi
                         desk = listDesk[4]
                     }
                     listLabels[5] -> {
-                        img = R.drawable.img_kendi
+                        img = R.drawable.img_kris_kamutar_sai
                         desk = listDesk[5]
                     }
                     listLabels[6] -> {
-                        img = R.drawable.img_kris_kamutar_sai
+                        img = R.drawable.img_pabekas_salaka
                         desk = listDesk[6]
                     }
                     listLabels[7] -> {
-                        img = R.drawable.img_pabekas_salaka
+                        img = R.drawable.img_pabua_gelang
                         desk = listDesk[7]
                     }
                     listLabels[8] -> {
-                        img = R.drawable.img_pabua_gelang
+                        img = R.drawable.img_pajula
                         desk = listDesk[8]
                     }
                     listLabels[9] -> {
-                        img = R.drawable.img_pajula
+                        img = R.drawable.img_peti
                         desk = listDesk[9]
                     }
                     listLabels[10] -> {
-                        img = R.drawable.img_peti
-                        desk = listDesk[10]
-                    }
-                    listLabels[11] -> {
                         img = R.drawable.img_salepa
-                        desk = listDesk[11]
+                        desk = listDesk[10]
                     }
                 }
             } else {
