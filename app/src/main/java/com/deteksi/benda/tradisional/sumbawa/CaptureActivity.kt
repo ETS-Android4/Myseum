@@ -272,12 +272,13 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
                 lihatSejarah.isEnabled = true
                 tvResult.text = text
                 lihatSejarah.isEnabled = true
+                tvPlaceHolder.visibility = View.GONE
             } else {
                 tvResult.visibility = View.GONE
                 inputImageView.visibility = View.GONE
                 tvPlaceHolder.visibility = View.VISIBLE
                 lihatSejarah.isEnabled = false
-                tvPlaceHolder.text = "Gambar tidak terdeteksi"
+//                tvPlaceHolder.text = "Gambar tidak terdeteksi"
             }
         }
     }
@@ -308,7 +309,7 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
     private fun setViewAndDetect(bitmap: Bitmap) {
         // Display capture image
         inputImageView.setImageBitmap(bitmap)
-        tvPlaceHolder.visibility = View.INVISIBLE
+//        tvPlaceHolder.visibility = View.INVISIBLE
         tvResult.visibility = View.VISIBLE
 
         // Run ODT and display result

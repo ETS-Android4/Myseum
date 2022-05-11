@@ -4,61 +4,164 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.deteksi.benda.tradisional.sumbawa.CaptureActivity"
-    android:padding="8dp">
+    android:background="@color/black"
+    tools:context="com.deteksi.benda.tradisional.sumbawa.CaptureActivity">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView4"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/tvResult"
+        android:layout_height="match_parent"
+        android:background="@color/tfe_color_primary_dark" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/bg_capture_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/action_bar"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginVertical="16dp">
+        app:layout_constraintVertical_bias="0.537" />
 
-        <TextView
-            android:id="@+id/placeholder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Silahkan ambil gambar"
-            android:textAlignment="center"
-            android:textSize="40sp" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/lato_black"
+        android:text="MY SEUM"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView3"
+        app:layout_constraintStart_toEndOf="@+id/appCompatImageView3"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView3"
+        app:layout_constraintVertical_bias="0.545" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:contentDescription="@null"
-            android:scaleType="fitCenter" />
-    </FrameLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/ic_photo_custom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatImageView4"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2"
+        app:layout_constraintVertical_bias="0.096" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_black"
+        android:text="Gambar tidak terdeteksi"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/captureImageFab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Result"
-        android:textSize="18sp"
+        android:fontFamily="@font/lato_black"
+        android:text="Testing"
         android:visibility="gone"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@id/lihatSejarah"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/lihatSejarah"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lihat sejarah"
-        android:enabled="false"
-        app:layout_constraintBottom_toTopOf="@+id/captureImageFab"
-        tools:layout_editor_absoluteX="8dp" />
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/captureImageFab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Take Photo"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_marginHorizontal="8dp"
+        android:background="@drawable/custom_rounded"
+        android:text="TAKE PHOTO"
+        android:layout_marginBottom="16dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/lihatSejarah"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/lihatSejarah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/custom_rounded"
+        android:text="LIHAT SEJARAH"
+        android:textSize="24sp"
+        android:layout_marginHorizontal="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView4"
+        app:layout_constraintEnd_toEndOf="@+id/captureImageFab"
+        app:layout_constraintStart_toStartOf="@+id/captureImageFab" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<FrameLayout-->
+<!--android:id="@+id/frameLayout"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="0dp"-->
+<!--app:layout_constraintBottom_toTopOf="@id/tvResult"-->
+<!--app:layout_constraintTop_toTopOf="parent"-->
+<!--android:layout_marginVertical="16dp">-->
+
+<!--<TextView-->
+<!--    android:id="@+id/placeholder"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_gravity="center"-->
+<!--    android:text="Silahkan ambil gambar"-->
+<!--    android:textAlignment="center"-->
+<!--    android:textSize="40sp" />-->
+
+<!--<ImageView-->
+<!--    android:id="@+id/imageView"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:adjustViewBounds="true"-->
+<!--    android:contentDescription="@null"-->
+<!--    android:scaleType="fitCenter" />-->
+<!--</FrameLayout>-->
+
+<!--<androidx.appcompat.widget.AppCompatTextView-->
+<!--android:id="@+id/tvResult"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:text="Result"-->
+<!--android:textSize="18sp"-->
+<!--android:visibility="gone"-->
+<!--android:layout_marginBottom="8dp"-->
+<!--app:layout_constraintBottom_toTopOf="@id/lihatSejarah"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--<androidx.appcompat.widget.AppCompatButton-->
+<!--android:id="@+id/lihatSejarah"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:text="Lihat sejarah"-->
+<!--android:enabled="false"-->
+<!--app:layout_constraintBottom_toTopOf="@+id/captureImageFab"-->
+<!--tools:layout_editor_absoluteX="8dp" />-->
+
+<!--<androidx.appcompat.widget.AppCompatButton-->
+<!--android:id="@+id/captureImageFab"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:text="Take Photo"-->
+<!--app:layout_constraintBottom_toBottomOf="parent" />-->
