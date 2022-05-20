@@ -105,6 +105,7 @@
         android:background="@drawable/custom_rounded"
         android:text="LIHAT SEJARAH"
         android:textSize="24sp"
+        android:enabled="false"
         android:layout_marginHorizontal="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView4"
         app:layout_constraintEnd_toEndOf="@+id/captureImageFab"
