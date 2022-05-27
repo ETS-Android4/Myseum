@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         btnInfo.setOnClickListener(view -> {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
             alertDialog.setView(viewDialog(this));
-            alertDialog.setTitle("Tentang");
             alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "OK",
                     (dialog, which) -> dialog.dismiss());
             alertDialog.show();

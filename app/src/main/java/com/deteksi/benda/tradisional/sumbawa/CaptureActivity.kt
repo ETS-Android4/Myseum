@@ -74,13 +74,13 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
         "Badong merupakan salah satu Regalia Kesultanan Sumbawa yang dijadikan sebagai simbol Kepatuhan  Dan Pengayoman. Badong terbuat dari Kayu Pilihan berbentuk Lingkaran dg Diameter 60 Cm. Cembung bagian luar dan Cekung bagian dalam. Diberi Pegangan kiri kanan pada Bagian Dalam. Ketebalan Kayu Badong sekitar 3 Cm dengan Pucuk berbentuk Bunga Bersusun Berkelopak 8 terbuat dari Emas ( Bulaeng ) dengan pucuk bagian atas diberi permata. Pada Tokal Adat ( Upacara Istana ) baik Tokal Adat Ode maupun Tokal Adat Rea...maka Badong dijunjung di atas kepala seorang Pria petugas khusus. Dari Awal Acara hingga Akhir Acara.",
         "Batu parujak merupakan seperangkat alat menumbuk bahan masakan dan obat-obatan yang digunakan oleh masyarakat Sumbawa tempo dulu. Batu parujak terbuat dari batu alam yang di bentuk serupa alu dan lesung . alat menumbuk ini masih tersimpan rapi dimuseum Sumbawa.",
         "Cilo bulaeng atau cilo kamutar adalah mahkota sultan Sumbawa yang terbuat dari emas, digunakan saat upacara tokal adat rea, dan penobatan mudzakara rea sebagai kelengkapan pangkenang kanadi “pasangengang” atau pakaian kebesaran.  Pada bagian pinggir terukir lafaz Allah dan Muhammad yang menjadi penanda bahwa mahkota ini bercorak islami.",
-        "Kalaru tata yakni gelang yang menjadi kelengkapan pakaian pengantin wanita khas Sumbawa. Kalaru tata terbuat dari emas muda dan memiliki motif yang sangat khas dari daerah Sumbawa yakni kemang satange, lonto engal.",
+        "Kalaru yakni gelang yang menjadi kelengkapan pakaian pengantin wanita khas Sumbawa. Kalaru terbuat dari emas muda dan memiliki motif yang sangat khas dari daerah Sumbawa yakni kemang satange, lonto engal.",
         "Fungsi utama kendi adalah sebagai wadah minum di mana air tetap dingin sepanjang hari karena porositas tanah liat. Airnya dituangkan dari kendi langsung ke mulut Konon kendi yang berasal dari India meluas ke Asia Tengggara dan Cina dibawa pedagang dan pemuka agama. Di abad ke-14, kundika yang menjadi wadah ritual Hindu dan Budha di Indonesia mulai ditinggalkan. Namun istilah kendi sudah diserap dalam bahasa Melayu yakni kendi atau kundi. Sementara orang Jawa menyebut gendi.",
         "“Keris kamutar sai” merupakan salah satu “parewa kamutar” kesultanan Sumbawa yang berbentuk sebilah keris yang berbahan besi  unggulan dengan hulu dari emas dan bertahtakan berlian. Keris ini menjadi simbol keagunan dan kemuliaan seorang sultan dan sebagai symbol marwah Tau Tana Samawa.Dalam kedudukannya sebagai parewa kamutar, keris kamutar sai adalah regalia dan plural tantum sekaligus sebagai simbol hak dan sifat yang menjadi lambang kekuasaan seorang Sultan.Pada saat tokal adat rea berlangsung keris kamutar sai akan dipangku atau dibawa oleh seorang “tame” (petugas pembawa keris kamutar sai)",
         "Pakebas salaka yakni sebuah kipas yang terbuat dari perak yang berukir khas motif Sumbawa. Fungsinya adalah sebagai alat untuk mengipasi Sultan dan Permaisuri dalam acara “tokal adat ode” (acara adat).",
         "Pabua gelang yakni seperangkat tempat sirih pinang yang terbuat dari “suasa” / emas muda. Pabua gelang biasanya dipakai oleh masyarakat Sumbawa yang gemar “mama”/kebiasaan nyirih pada masa lalu.",
         "Pajula merupakan wadah yang difungsikan sebagai tempat meludah kaum bangsawan Sumbawa. Pajula pada umumnya terbuat dari logam mulia seperti emas, perak, perunggu dan kuningan. Pajula memiliki tinggi 25 cm dan diameter 8 cm.",
-        "Kandaga merupakan peti kuno yang terbuat dari kayu yang sangat keras. Bagian bidang luarnya diukir dengan ragam motif khas Sumbawa seperti lonto engal, wafak, kemang satange dan lain-lain. Bagian tutupnya ditatah dengan kulit lokan mutiara. Kandaga berfungsi sebagai peti tempat menyimpan barang berhagara seperti emas, kre alang, perhiasan dll.",
+        "Peti merupakan peti kuno yang terbuat dari kayu yang sangat keras. Bagian bidang luarnya diukir dengan ragam motif khas Sumbawa seperti lonto engal, wafak, kemang satange dan lain-lain. Bagian tutupnya ditatah dengan kulit lokan mutiara. Peti berfungsi sebagai peti tempat menyimpan barang berhagara seperti emas, kre alang, perhiasan dll.",
         "Salepa bulaeng merupakan kelengkapan piranti adat “tokal adat ode” kesultan Sumbawa. Salepa bulaeng ini merupakan simbolisasi kebesaran kesultanan Sumbawa yang berbentuk kotak dan  terbuat dari emas serta dipenuhi dengan ornamen ukiran lonto engal khas Sumbawa. Bagian dalamnya terbuat dari salaka “perak”.  Salepa bulaeng berfungsi sebagai wadah rokok sultan."
     )
 
@@ -497,6 +497,8 @@ class CaptureActivity : AppCompatActivity(), View.OnClickListener {
         tvDesk.text = desk
 
         tvDesk.movementMethod = ScrollingMovementMethod()
+
+        JustifyText.justify(tvDesk)
 
         return layout
     }
